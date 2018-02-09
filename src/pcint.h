@@ -26,7 +26,7 @@ Nov.2014 large changes
 	#include "pins_arduino.h"
 
 	typedef void (*voidFuncPtr)(void);
-
+	#define NUM_DIGITAL_PINS 35
 	#define HANDLER_TYPE mixHandler
 
 	/*#if (defined (_mk20dx128_h_) || defined (__MK20DX128__)) && defined (CORE_TEENSY)
