@@ -35,7 +35,7 @@ Nov.2014 large changes
 	defined(RSITE_TEENSY3) || defined(ARDUINO_SAM_DUE)*/
 
 	#if defined(__arm__) || defined(ESP8266)
-		#warning Compiling for arm
+		//#warning Compiling for arm
 		#define PCINT_NO_MAPS
 	#endif
 
@@ -103,7 +103,7 @@ Nov.2014 large changes
 	void PCattachInterrupt(HANDLER_TYPE userFunc, uint8_t mode) {
 	  #ifdef PCINT_NO_MAPS
 			PCintFunc[PIN]=userFunc;
-	    attachInterrupt(digitalPinToInterrupt(PIN),PCint<PIN>,mode);
+	    attachInterrupt(digitalPinToInterrupt(PIN),PCint<PIN>,(ExtIntTriggerMode)mode);
 	  #else
 			PCattachInterrupt(PIN,userFunc,mode);
 	  #endif
